@@ -275,3 +275,8 @@ public class MainClass
     }
 }
 */
+/* 
+ Проверка работоспособности и ыгрузки на гитхаб
+
+*/
+Console.WriteLine("Hellow, Chuwi");
