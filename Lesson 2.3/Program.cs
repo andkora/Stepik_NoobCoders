@@ -278,5 +278,56 @@ public class MainClass
 /* 
  Проверка работоспособности и ыгрузки на гитхаб
 
-*/
+
 Console.WriteLine("Hellow, Chuwi");
+*/
+
+/* И вновь дядя Вася берется за измерения, но на этот раз он решил измерить свой дачный участок своей старой рулеткой 5м, 
+ пытаясь найти площадь. Участок имеет форму прямоугольника.
+
+Напишите программу, которая вычисляет площадь участка.
+
+Напоминаем, что у рулетки отломаны первые 20 см и дядя Вася об этом не знает (он напишет 1.2 м, хотя в реальности измерил 1 м). 
+А так как длина рулетки меньше стороны участка, то дядя Вася каждый раз, когда заканчивается длина рулетки, 
+ставит зарубку на ограде и,
+переставляя рулетку, продолжает измерения от зарубки.
+*/
+
+Console.WriteLine("Введите два числа через пробел: длина и ширина участка");
+string line = Console.ReadLine();
+string[] splitString = line.Split(' ');
+
+double length = Convert.ToDouble(splitString[0]); // длина
+double width = Convert.ToDouble(splitString[1]); // ширина
+double landArea = 0;                             // переменная для площади
+double single = 4.8;
+int CheckLenght = Convert.ToInt32(length % 5);
+int Checkwidth = Convert.ToInt32(width % 5);
+switch (CheckLenght)
+{
+    case 0:
+        switch (Checkwidth)
+        {
+            case 0:
+                length = length <= 5 ? (length - 0.2) : (single * Math.Floor(length / 5));
+                width = width <= 5 ? (width - 0.2) : ((single * Math.Floor(width / 5))); break;
+            default:
+                length = length <= 5 ? (length - 0.2) : (single * Math.Floor(length / 5));
+                width = width <= 5 ? (width - 0.2) : ((single * Math.Floor(width / 5)) + ((width % 5) - 0.2)); break;
+        }
+        break;
+    default:
+        switch (Checkwidth)
+        {
+            case 0:
+                length = length <= 5 ? (length - 0.2) : ((single * Math.Floor(length / 5)) + ((length % 5) - 0.2));
+                width = width <= 5 ? (width - 0.2) : ((single * Math.Floor(width / 5))); break;
+            default:
+                length = length <= 5 ? (length - 0.2) : ((single * Math.Floor(length / 5)) + ((length % 5) - 0.2));
+                width = width <= 5 ? (width - 0.2) : ((single * Math.Floor(width / 5)) + ((width % 5) - 0.2)); break;
+        }
+        break;
+}
+landArea = Math.Round((length * width),2);
+// 
+Console.WriteLine($"Площадь участка: {landArea}");
