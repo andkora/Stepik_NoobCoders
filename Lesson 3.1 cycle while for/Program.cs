@@ -86,83 +86,61 @@ for (int i = 2; i <= num; i++)
  */
 /*
 int startValue = int.Parse(Console.ReadLine());
-int endValue = int.Parse(Console.ReadLine());
+        int endValue = int.Parse(Console.ReadLine());
 
-//int startNumber = startValue < 0 ? -startValue : startValue;
+        //int startNumber = startValue < 0 ? -startValue : startValue;
 
-//int endNumber = endValue < 0 ? -endValue : endValue;
-
-int sumR = 0;
-int sumL = 0;
-if (startValue >= 0)
-{
-    for (int i = startValue; i > 1; i--)
-    {
-        int k;
-        for (int n=2;n<startValue;n++)
+        //int endNumber = endValue < 0 ? -endValue : endValue;
+        int sum = 0;
+        startValue = startValue < 0 ? 0 : startValue;
+        endValue = endValue < 0 ? 0 : endValue;
+        if (startValue > endValue)
         {
-            k = i;
-            k = ((startValue % n) == 0) && (i!= n) ? k = 0 : k;
-            sumR += k;
-           
+            for (int i = endValue; i < startValue; i++)
+            {
+                int k = i < 1 ? -i : i;
+                if (k > 1 && (k == 2 || k % 2 != 0))
+                {
+                    for (int n = 3; n <= Math.Sqrt(k); n += 2)
+                    { k = k % n != 0 ? k : 0; }
+                    sum += k;
+                }
+                else
+                    k = 0;
+
+
+
+
+                //Console.Write("i= " + i + "  ");
+                //Console.WriteLine("sum= " + sum);
+            }
+
         }
+        else
+        {
+            for (int i = startValue; i <= endValue; i++)
+            {
+                int k = i < 1 ? -i : i;
+                if (k > 1 && (k == 2 || k % 2 != 0))
+                {
+                    for (int n = 3; n <= Math.Sqrt(k); n += 2)
+                    { k = k % n != 0 ? k : 0; }
+                    sum += k;
+                }
+                else
+                    k = 0;
                 Console.Write("i= " + i + "  ");
-    Console.WriteLine("sum= " + sumR);
-    }
-}
+                Console.WriteLine("sum= " + sum);
+            }
 
-else
-{
-    for (int i = startValue; i < -1; i++)
-    {
-        for (int n = 2; n > startValue; n++)
-        {
-            i = (startValue % n == 0) && (n != i) ? i = 0 : i;
         }
-        sumR += i;
-        Console.Write("i= " + i + "  ");
-        Console.WriteLine("sum= " + sumR);
+        Console.WriteLine($"Сумма простых чисел = {sum}");
     }
     
 }
- sumR = sumR < 0 ? -sumR : sumR;
-
-if (endValue >= 0)
-{
-    for (int i = endValue; i > 1; i--)
-    {
-        for (int n = 2; n < endValue; n++)
-        {
-            i = (startValue % n == 0) && (n != i) ? i = 0 : i;
-        }
-        sumL += i;
-        Console.Write("i= " + i + "  ");
-        Console.WriteLine("sum= " + sumL);
-    }
-}
-
-else
-{
-    for (int i = endValue; i < -1; i++)
-    {
-        int k;
-        for (int n = -2; n < endValue; n--)
-        {
-            k = i;
-            k = (endValue % n == 0) && (n != i) ? k = 0 : k;
-            sumL += k;
-        }
-        Console.Write("i= " + i + "  ");
-        Console.WriteLine("sum= " + sumL);
-    }
-
-}
-sumL = sumL < 0 ? -sumL : sumL;
-int sum = sumL + sumR;
-Console.WriteLine();
-
-Console.WriteLine("sum = " + sum);
+ 
 */
+//Изменена задача 5
 /*
  *  
  Задача 6, Шаг 13 по курсу из Stepik
