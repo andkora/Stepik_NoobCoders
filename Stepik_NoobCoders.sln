@@ -5,7 +5,7 @@ VisualStudioVersion = 17.14.36310.24
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson 3", "Lesson 3\Lesson 3.csproj", "{36634595-9742-4851-9789-7677F99AFCFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson 4", "Lesson 4\Lesson 4.csproj", "{19F821B5-DCA8-4BC4-83BA-9243FDE1CF30}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson 4 Array", "Lesson 4\Lesson 4 Array.csproj", "{19F821B5-DCA8-4BC4-83BA-9243FDE1CF30}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson 1", "lesson 1\Lesson 1.csproj", "{A16FF69B-B6D9-5A7E-E46E-45416FCE8FC5}"
 EndProject
